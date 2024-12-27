@@ -1,0 +1,104 @@
+#!/bin/sh
+
+# get for each workspace
+ws_1=$(hyprctl workspaces | grep 'workspace ID 1 ' | cut -d ' ' -f 3)
+ws_2=$(hyprctl workspaces | grep 'workspace ID 2' | cut -d ' ' -f 3)
+ws_3=$(hyprctl workspaces | grep 'workspace ID 3' | cut -d ' ' -f 3)
+ws_4=$(hyprctl workspaces | grep 'workspace ID 4' | cut -d ' ' -f 3)
+ws_5=$(hyprctl workspaces | grep 'workspace ID 5' | cut -d ' ' -f 3)
+ws_6=$(hyprctl workspaces | grep 'workspace ID 6' | cut -d ' ' -f 3)
+ws_7=$(hyprctl workspaces | grep 'workspace ID 7' | cut -d ' ' -f 3)
+ws_8=$(hyprctl workspaces | grep 'workspace ID 8' | cut -d ' ' -f 3)
+ws_9=$(hyprctl workspaces | grep 'workspace ID 9' | cut -d ' ' -f 3)
+ws_10=$(hyprctl workspaces | grep 'workspace ID 10' | cut -d ' ' -f 3)
+
+# return variable
+ret=""
+
+char_occupied="[]"
+char_empty="--"
+char_spacer=""
+
+# compare and add
+if [ "$ws_1" == "1" ]; then
+	ret=$ret$char_occupied
+else
+	ret=$ret$char_empty
+fi
+
+ret=$ret$char_spacer
+
+if [ "$ws_2" == "2" ]; then
+	ret=$ret$char_occupied
+else
+	ret=$ret$char_empty
+fi
+
+ret=$ret$char_spacer
+
+if [ "$ws_3" == "3" ]; then
+	ret=$ret$char_occupied
+else
+	ret=$ret$char_empty
+fi
+
+ret=$ret$char_spacer
+
+if [ "$ws_4" == "4" ]; then
+	ret=$ret$char_occupied
+else
+	ret=$ret$char_empty
+fi
+
+ret=$ret$char_spacer
+
+if [ "$ws_5" == "5" ]; then
+	ret=$ret$char_occupied
+else
+	ret=$ret$char_empty
+fi
+
+ret=$ret$char_spacer
+
+if [ "$ws_6" == "6" ]; then
+	ret=$ret$char_occupied
+else
+	ret=$ret$char_empty
+fi
+
+ret=$ret$char_spacer
+
+if [ "$ws_7" == "7" ]; then
+	ret=$ret$char_occupied
+else
+	ret=$ret$char_empty
+fi
+
+ret=$ret$char_spacer
+
+if [ "$ws_8" == "8" ]; then
+	ret=$ret$char_occupied
+else
+	ret=$ret$char_empty
+fi
+
+ret=$ret$char_spacer
+
+if [ "$ws_9" == "9" ]; then
+	ret=$ret$char_occupied
+else
+	ret=$ret$char_empty
+fi
+
+ret=$ret$char_spacer
+
+if [ "$ws_10" == "10" ]; then
+	ret=$ret$char_occupied
+else
+	ret=$ret$char_empty
+fi
+
+ret=$ret$char_spacer
+
+# return
+echo $ret

@@ -1,0 +1,44 @@
+;
+; hyprland workspaces
+;
+
+;
+; Windows
+;
+(defwindow wn_workspaces
+	:monitor 0
+	:geometry (geometry
+		:x "16"
+		:y "16"
+		:width "400"
+		:height "64"
+		:anchor "top left"
+	)
+	:stacking "fg"
+	:exclusive false
+(wg_workspaces)
+)
+
+;
+; Widgets
+;
+(defwidget wg_workspaces []
+	(box
+		:class "wg_workspaces"
+		:orientation "v"
+		:halign "center"
+		:valign "center"
+		:space-evenly true
+	"Workspaces:"
+	workspaces
+	)
+)
+
+;
+; Variables
+;
+(defpoll workspaces
+	:interval "1s"
+	:initial "workspaces"
+	`scripts/get_workspaces_hyprland`
+)

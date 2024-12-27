@@ -1,0 +1,14 @@
+#!/bin/sh
+
+# get brightnesses
+current_brightness=$(brightnessctl g)
+max_brightness=$(brightnessctl m)
+
+# multiply by 100 for integer
+current_brightness=$(($current_brightness * 100))
+
+# determine percentage
+percentage=$(($current_brightness / $max_brightness))
+
+# return
+echo $percentage%

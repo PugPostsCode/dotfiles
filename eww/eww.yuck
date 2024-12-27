@@ -1,0 +1,10 @@
+;
+; main eww file
+;
+(include
+	"dashboard.yuck"
+)
+
+(include
+	"workspaces.yuck"
+)

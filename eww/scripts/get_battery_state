@@ -1,0 +1,11 @@
+#!/bin/sh
+
+battery_state=$(cat /sys/class/power_supply/BAT0/status)
+
+if [ "$battery_state" == "Not charging" ]; then
+	echo "Full"
+elif [ "$battery_state" == "Discharging" ]; then
+	echo "Draining"
+else
+	echo $battery_state
+fi

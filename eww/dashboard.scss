@@ -1,0 +1,78 @@
+/*
+	Styling for the dashboard
+*/
+.wn_profile, .wn_timedate, .wn_audio, .wn_battery, .wn_battery_state, .wn_brightness {
+	background-color: rgba(0, 0, 0, 0.4);
+	color: #ffffff;
+
+	border: 2px solid #808080;
+	border-radius: 8px;
+
+	font-family: monospace;
+}
+
+/* Profile */
+.wg_profile {
+	min-width: 272px;
+	min-height: 256px;
+
+	font-size: 1.5em;
+	font-weight: bold;
+}
+
+.profile_picture {
+	background-image: url("images/trauma_256.jpg");
+	background-size: 128px;
+
+	margin: 32px 64px;
+
+	border-radius: 100%;
+
+	min-width: 128px;
+	min-height: 128px;
+
+}
+
+/* Time & date */
+.wg_timedate {
+	min-width: 272px;
+	min-height: 128px;
+
+	font-size: 3em;
+	font-weight: bold;
+}
+
+/* Battery */
+.wg_battery {
+	min-width: 112px;
+	min-height: 64px;
+
+	font-size: 1.5em;
+	font-weight: bold;
+}
+
+.wg_battery_state {
+	min-width: 144px;
+	min-height: 64px;
+
+	font-size: 1.5em;
+	font-weight: bold;
+}
+
+/* Audio */
+.wg_audio {
+	min-width: 112px;
+	min-height: 64px;
+
+	font-size: 1.5em;
+	font-weight: bold;
+}
+
+/* Brightness */
+.wg_brightness {
+	min-width: 144px;
+	min-height: 64px;
+
+	font-size: 1.5em;
+	font-weight: bold;
+}

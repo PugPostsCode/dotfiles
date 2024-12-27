@@ -1,0 +1,8 @@
+#!/bin/sh
+
+eww open wn_timedate
+eww open wn_profile
+eww open wn_audio
+eww open wn_brightness
+eww open wn_battery
+eww open wn_battery_state

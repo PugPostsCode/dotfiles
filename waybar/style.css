@@ -1,0 +1,134 @@
+/* all */
+* {
+    border: none;
+    font-family: W95FA, "Courier New", monospace;
+    font-size: 12px;
+    min-height: 0;
+
+    border-radius: 0;
+}
+
+/* bar */
+window#waybar {
+    background: #c0c0c0;
+    color: #000000;
+
+    margin: 12px;
+}
+
+window#waybar, .modules-left {
+	border-bottom: solid 2px #000000;
+}
+
+/* modules */
+.modules-left, .modules-center, .modules-right {
+	background: #c0c0c0;
+	color: #000000;
+
+	padding: 4px 8px;
+
+	margin: 4px;
+}
+
+.modules-center, .modules-right {
+	border: solid 2px #ffffff;
+	border-right: solid 2px #000000;
+	border-bottom: solid 2px #000000;
+}
+
+.modules-left{
+	margin: 0;
+}
+
+.modules-center {
+	padding: 0 20px;
+}
+
+.modules-right * {
+	padding: 0 8px;
+}
+
+/* tooltip */
+tooltip {
+	background: #c0c0c0;
+	color: #000000;
+
+	border: solid 2px #ffffff;
+	border-right: solid 2px #000000;
+	border-bottom: solid 2px #000000;
+}
+tooltip label {
+	color: #000000;
+}
+
+/* button? */
+#workspaces {
+	padding: 0;
+	margin: 0;
+}
+
+#workspaces button {
+	background: #c0c0c0;
+	color: #000000;
+
+    border: solid 2px #ffffff;
+   	border-right: solid 2px #000000;
+   	border-bottom: solid 2px #000000;
+
+   	padding: 0 4px;
+
+   	margin: 0 4px;
+}
+
+#workspaces button.active {
+    background: #ffffff;
+
+    border: solid 2px #000000;
+  	border-right: solid 2px #ffffff;
+  	border-bottom: solid 2px #ffffff;
+}
+
+#workspaces button.urgent {
+    background: #000080;
+}
+
+#workspaces button.hover {
+    border: 0;
+}
+
+/* tray */
+#tray {
+	background: #000000;
+
+	border: solid 2px #000000;
+  	border-right: solid 2px #ffffff;
+  	border-bottom: solid 2px #ffffff;
+}
+
+/* clock */
+#clock {
+	padding: 0 4px;
+}
+
+/* battery */
+#battery.charging {
+	background: #008000;
+
+	border: solid 2px #000000;
+  	border-right: solid 2px #ffffff;
+  	border-bottom: solid 2px #ffffff;
+}
+
+@keyframes blink {
+	to {
+		background-color: #800000;
+    }
+}
+
+#battery.warning:not(.charging) {
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: steps(12);
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}

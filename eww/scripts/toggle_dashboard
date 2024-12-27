@@ -1,0 +1,9 @@
+#!/bin/sh
+
+isopen=$(eww active-windows | grep wn_timedate)
+
+if [ "$isopen" != "wn_timedate: wn_timedate" ]; then
+	bash /home/pug/.config/eww/scripts/open_dashboard
+else
+	bash /home/pug/.config/eww/scripts/close_dashboard
+fi
