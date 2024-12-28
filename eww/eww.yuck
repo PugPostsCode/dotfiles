@@ -2,7 +2,7 @@
 ; main eww file
 ;
 (include
-	"dashboard.yuck"
+	"dashboard_bspwm.yuck"
 )
 
 (include

@@ -2,13 +2,14 @@
 	Styling for the dashboard
 */
 .wn_profile, .wn_timedate, .wn_audio, .wn_battery, .wn_battery_state, .wn_brightness {
-	background-color: rgba(0, 0, 0, 0.4);
-	color: #ffffff;
+	background-image: linear-gradient(#c0c0c0, #808080);
+	color: #000000;
 
-	border: 2px solid #808080;
-	border-radius: 8px;
+	border: 2px solid #ffffff;
+	border-right-color: #202020;
+	border-bottom-color: #202020;
 
-	font-family: monospace;
+	font-family: Courier New, monospace;
 }
 
 /* Profile */
@@ -24,8 +25,9 @@
 	background-image: url("images/trauma_256.jpg");
 	background-size: 128px;
 
-	margin: 32px 72px;
+	margin: 28px 68px;
 
+	border: 2px solid #000000;
 	border-radius: 100%;
 
 	min-width: 128px;

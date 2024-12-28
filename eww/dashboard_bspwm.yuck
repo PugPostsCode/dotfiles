@@ -1,0 +1,248 @@
+;
+; Windows
+;
+
+; time & date
+(defwindow wn_timedate
+	:monitor 0
+	:geometry (geometry
+		:x "-16"
+		:y "16"
+		:width "272"
+		:height "128"
+		:anchor "top right"
+	)
+	:stacking "fg"
+	:exclusive false
+(wg_timedate)
+)
+
+; profile
+(defwindow wn_profile
+	:monitor 0
+	:geometry (
+		geometry
+		:x "-16"
+		:y "160"
+		:width "272"
+		:height "256"
+		:anchor "top right"
+	)
+	:stacking "fg"
+	:exclusive false
+(wg_profile)
+)
+
+; audio
+(defwindow wn_audio
+	:monitor 0
+	:geometry (geometry
+		:x "-176"
+		:y "432"
+		:width "112"
+		:height "64"
+		:anchor "top right"
+	)
+	:stacking "fg"
+	:exclusive false
+(wg_audio)
+)
+
+; brightness
+(defwindow wn_brightness
+	:monitor 0
+	:geometry (geometry
+		:x "-16"
+		:y "432"
+		:width "144"
+		:height "64"
+		:anchor "top right"
+	)
+	:stacking "fg"
+	:exclusive false
+(wg_brightness)
+)
+
+; battery
+(defwindow wn_battery
+	:monitor 0
+	:geometry (geometry
+		:x "-16"
+		:y "512"
+		:width "112"
+		:height "64"
+		:anchor "top right"
+	)
+	:stacking "fg"
+	:exclusive false
+(wg_battery)
+)
+
+(defwindow wn_battery_state
+:monitor 0
+	:geometry (geometry
+		:x "-144"
+		:y "512"
+		:width "144"
+		:height "64"
+		:anchor "top right"
+	)
+	:stacking "fg"
+	:exclusive false
+(wg_battery_state)
+)
+
+;
+; Widgets
+;
+
+; time & date
+(defwidget wg_timedate []
+	(box
+		:class "wg_timedate"
+		:orientation "v"
+		:halign "center"
+		:valign "center"
+		:space-evenly true
+		time
+		date
+	)
+)
+
+; profile
+(defwidget wg_profile []
+	(box
+		:class "wg_profile"
+		:orientation "v"
+		:halign "center"
+		:valign "center"
+		:space-evenly false
+		(box
+			:class "profile_picture"
+		)
+		(box
+			:halign "center"
+			:space-evenly false
+			"Hello, " user ";"
+		)
+		(box
+			:halign "center"
+			:space-evenly false
+			"Welcome to " hostname "."
+		)
+	)
+)
+
+; audio
+(defwidget wg_audio []
+	(box
+		:class "wg_audio"
+		:orientation "v"
+		:halign "center"
+		:valign "center"
+		:space_evenly true
+		audio_state
+		audio_volume
+	)
+)
+
+; brightness
+(defwidget wg_brightness []
+	(box
+		:class "wg_brightness"
+		:orientation "v"
+		:halign "center"
+		:valign "center"
+		:space-evenly true
+		"Brightness:"
+		brightness
+	)
+)
+
+; battery
+(defwidget wg_battery []
+	(box
+		:class "wg_battery"
+		:orientation "v"
+		:halign "center"
+		:valign "center"
+		:space_evenly true
+		"Battery:"
+		battery
+	)
+)
+
+(defwidget wg_battery_state []
+	(box
+		:class "wg_battery_state"
+		:orientation "v"
+		:halign "center"
+		:valign "center"
+		:space_evenly true
+		"Battery is"
+		battery_state
+	)
+)
+
+;
+; Variables
+;
+
+; time & date
+(defpoll time
+	:interval "1s"
+	:initial "time"
+	`date +%H:%M:%S`
+)
+
+(defpoll date
+	:interval "5m"
+	:initial "date"
+	`date +%D`
+)
+
+; profile
+(defpoll user
+	:interval "5m"
+	:initial "user"
+	`whoami`
+)
+
+(defpoll hostname
+	:interval "5m"
+	:initial "hostname"
+	`hostnamectl hostname`
+)
+
+; audio
+(defpoll audio_volume
+	:interval "0.5s"
+	:initial "volume"
+	`scripts/get_volume`
+)
+
+(defpoll audio_state
+	:interval "0.5s"
+	:initial "audio state"
+	`scripts/get_audio_state`
+)
+
+; brightness
+(defpoll brightness
+	:interval "0.5s"
+	:initial "brightness"
+	`scripts/get_brightness`
+)
+
+; battery
+(defpoll battery
+	:interval "2s"
+	:initial "battery"
+	`scripts/get_battery`
+)
+
+(defpoll battery_state
+	:interval "2s"
+	:initial "battery"
+	`scripts/get_battery_state`
+)
